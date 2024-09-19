@@ -8,6 +8,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -72,6 +73,10 @@ function App(): React.JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Button
+          title="requestIdleCallback"
+          onPress={() => requestIdleCallback(() => console.log('idle'))}
+        />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
